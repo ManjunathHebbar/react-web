@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
+import DisplayPostDetail from './Post/display-post.component'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      userPostDetails:[]
+    }
+  }
 
-export default App;
+
+  initial(){
+     this.fetchUserDetails();
+  }
+
+  fetchUserDetails(){
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({userPostDetails:result});
+        },
+
+        (error) => {
+          this.setState({error});
+        })
+  }
+
+  componentDidMount(){
+    this.initial();
+  }
+
+  render(){ 
+    const {userPostDetails} = this.state;
+    console.log(userPostDetails)
+    return (
+     <div>
+       {userPostDetails.length ?
+        <DisplayPostDetail
+          userPostDetails = {userPostDetails}
+        /> : null}
+     </div>
+    );
+}
+}
+export default App

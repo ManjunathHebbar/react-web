@@ -8,14 +8,9 @@ class App extends React.Component{
     this.state = {
       userPostDetails:[]
     }
-  }
+ }
 
-
-  initial(){
-     this.fetchUserDetails();
-  }
-
-  fetchUserDetails(){
+componentDidMount(){
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then(res => res.json())
       .then(
@@ -28,13 +23,8 @@ class App extends React.Component{
         })
   }
 
-  componentDidMount(){
-    this.initial();
-  }
-
   render(){ 
     const {userPostDetails} = this.state;
-    console.log(userPostDetails)
     return (
      <div>
        {userPostDetails.length ?

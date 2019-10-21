@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Post/display-post.styles.scss'
 import CommentDisplay from '../comments/comment-display.component'
-import UserProfile from '../user-profile/user-profile-component'
+import {Link} from 'react-router-dom' 
 
 class DisplayPostDetail extends React.Component{
   constructor(props){
@@ -36,12 +36,7 @@ class DisplayPostDetail extends React.Component{
       })
 }
   
-myFunction() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("myBar").style.width = scrolled + "%";
-}
+
 
 username = (users, userDetail) => {
     let name = "";
@@ -55,27 +50,21 @@ username = (users, userDetail) => {
     return name
   }
 
-callUser = (users) => {
-   return(
-    <UserProfile
-      UserProfile = {users}
-    />
-   )
-}
+
 
 render(){
  const {userPostDetails} = this.props;
  const {comments, users} = this.state;
+ 
     return(
         <div className="flex-container">
-          <div className="progress-container">
-            <div className="progress-bar" id="myBar"></div>
-          </div>  
               {users.length && comments.length && userPostDetails.map((userDetail,index) => 
                   <div className="user-card" key={index}>
-                      <button onClick={this.callUser(users)} className="name">
+                      <Link to={`/user-profile/${userDetail.userId}`}>
+                      <button className="name">
                          {this.username(users, userDetail)}
                       </button>
+                      </Link>
                       <div className="title" ><strong>Title:</strong>{userDetail.title}</div>
                       <div className="description"><strong>Description: </strong>{userDetail.body}</div>
                       <div>
@@ -87,10 +76,10 @@ render(){
                   </div>
                    
                 )}
-                
-                {window.onscroll = () => {this.myFunction()}}
-         </div>
-      );
+             
+            </div>
+          );
+      
    }
 }
 

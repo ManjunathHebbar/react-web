@@ -26,11 +26,21 @@ componentDidMount(){
   render(){ 
     const {userPostDetails} = this.state;
     return (
-     <div>
+     <div className="App">
+      {/* <div className="progress-container">
+      <div className="progress-bar" id="myBar"></div>
+      {window.onscroll = () => {
+          var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          var scrolled = (winScroll / height) * 100;
+          document.getElementById("myBar").style.width = scrolled + "%";}}
+      </div> */}
        {userPostDetails.length ?
         <DisplayPostDetail
           userPostDetails = {userPostDetails}
         /> : null}
+           
+        
      </div>
     );
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import './user-profile.styles.scss'
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
 class UserProfile extends React.Component{
 constructor(props){
   super(props)
@@ -33,24 +33,29 @@ componentDidMount(){
 
 renderUserProfile = (userProfile,index) =>{
    return(
-        <div key={index}>
-            <div className="username">{userProfile.username}</div>
-            <div className="email">{userProfile.email}</div>
-            <div className="address">
-                    <div className="street">{userProfile.address.street}</div>
-                    <div className="email">{userProfile.address.suite}</div>
-                    <div className="city">{userProfile.address.city}</div>
-                    <div className="zipcode">{userProfile.address.zipcode}</div>
+        <div key={index} className="user-profile">
+            <div className="name-mail">
+              <div className="username"><mark>Name:</mark> {userProfile.username}</div>
+              <div className="email"><mark>Email:</mark> {userProfile.email}</div>
             </div>
-         </div>
-    )
+            <div className="full-address">
+              <div className="address"><mark>Address</mark></div>
+              <address className="address-detail">
+                <div className="street">{userProfile.address.street}</div>
+                <div className="email">{userProfile.address.suite}</div>
+                <div className="city">{userProfile.address.city}</div>
+                <div className="zipcode">{userProfile.address.zipcode}</div>
+              </address>
+            </div>
+          </div>
+        )
 }
 
 renderUserAlbums = (album, index) => {
   return(
-     <div key={index}>
+     <div key={index} className="image-title"> 
         <Link to = {`/user-album/${album.userId}`}>
-            <button className="image-title">{album.title}</button> 
+            <button className="album-button">{`Click on Album: ${album.title}`}</button> 
         </Link>
      </div>
    )

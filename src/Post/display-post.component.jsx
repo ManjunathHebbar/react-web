@@ -65,7 +65,7 @@ render(){
                          {this.username(users, userDetail)}
                       </button>
                       </Link>
-                      <div className="title" ><strong>Title:</strong>{userDetail.title}</div>
+                      <div className="title" ><strong>Title: </strong>{userDetail.title}</div>
                       <div className="description"><strong>Description: </strong>{userDetail.body}</div>
                       <div>
                         <CommentDisplay 

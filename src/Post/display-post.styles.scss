@@ -2,43 +2,49 @@
     display: flex;
     flex-wrap: wrap;
     justify-content:space-between;
-    background-color:whitesmoke;
+    background-color:#659DBD;
     padding: 30px 150px;
     font-family: 'Courier New', Courier, monospace;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    & .progress-container {
-      width: 100%;
-      height: 15px;
-      background:white;
-      position: fixed;
-      top:0;
-      left:0;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    // & .progress-container {
+    //   width: 100%;
+    //   height: 15px;
+    //   background:white;
+    //   position: fixed;
+    //   top:0;
+    //   left:0;
+    //   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
-        & .progress-bar {
-        height: 15px;
-        background:dodgerblue;
-        width: 0%;
-        margin: 0;
-      }
-    }
+    //     & .progress-bar {
+    //     height: 15px;
+    //     width: 0%;
+    //     margin: 0;
+    //   }
+    // }
  
   & .user-card {
     display:flex;
     flex-direction: column;
     background-color: whitesmoke;
     color: black;
+    font-family: 'Muli', sans-serif;
     padding: 10px;
     margin: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width:100%;
   
    & .name{
-     background-color:dodgerblue;
+     background-color:#6595BD;
      padding: 10px;
+     color: white;
+     font-weight:bolder;
      text-align: center;
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   }
+
+   & .name:hover{
+       background-color: #282828;
    }
 
    & .title{

@@ -12,10 +12,10 @@ class AlbumDisplay extends React.Component{
     renderPhotoDisplay = (photo,index) =>{
         console.log(photo.title)
         return(
-         <div key={index}>
-            <div>{photo.title}</div>
-            <img src={photo.url} alt={photo.albumId} width="100px" height="100px"/>
-         </div>
+            <div key={index} className="album-title-image">
+                <img className="album-image" src={photo.url} alt={photo.albumId} width= "300px" height="300px"/>
+                <div className="album-title"><strong>title: </strong>{photo.title}</div>
+            </div>
         )
     }
 
@@ -36,7 +36,7 @@ class AlbumDisplay extends React.Component{
     render(){
         const {photos} = this.state;
         return(
-          <div>
+          <div className="album">
           {photos.map((photo,index)=> this.renderPhotoDisplay(photo,index))}
          
           </div>

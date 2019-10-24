@@ -33,12 +33,12 @@ handleButton=(isCommentVisible)=> {
 render(){
   const { isCommentVisible } = this.state
   const { CommentDetails } = this.props
-  const {userDetail} = this.props
+  const { userDetail } = this.props
    return(
      <div className ="comment">
         <div>
          <button id = "root" className="comment-visible"
-         onClick = {() => this.handleButton(isCommentVisible)}>comment
+             onClick = {() => this.handleButton(isCommentVisible)}>comment
         </button>
         </div>
         <div className="comment-text"> 

@@ -61,16 +61,16 @@ render(){
               {users.length && comments.length && userPostDetails.map((userDetail,index) => 
                   <div className="user-card" key={index}>
                       <Link to={`/user-profile/${userDetail.userId}`}>
-                      <button className="name">
-                         {this.username(users, userDetail)}
-                      </button>
+                        <button className="name">
+                          {this.username(users, userDetail)}
+                        </button>
                       </Link>
-                      <div className="title" ><strong>Title: </strong>{userDetail.title}</div>
-                      <div className="description"><strong>Description: </strong>{userDetail.body}</div>
+                       <div className="title" ><strong>Title: </strong>{userDetail.title}</div>
+                       <div className="description"><strong>Description: </strong>{userDetail.body}</div>
                       <div>
                         <CommentDisplay 
-                        CommentDetails  = {comments}
-                        userDetail = {userDetail}
+                            CommentDetails  = {comments}
+                            userDetail = {userDetail}
                         /> 
                       </div>
                   </div>

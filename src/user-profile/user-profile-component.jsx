@@ -11,7 +11,6 @@ constructor(props){
 }
 
 componentDidMount(){
-
   fetch(`https://jsonplaceholder.typicode.com/users?id=${this.props.match.params.id}`)
   .then(res => res.json())
   .then(
@@ -54,8 +53,8 @@ renderUserProfile = (userProfile,index) =>{
 renderUserAlbums = (album, index) => {
   return(
      <div key={index} className="image-title"> 
-        <Link to = {`/user-album/${album.userId}`}>
-            <button className="album-button">{`Click on Album: ${album.title}`}</button> 
+        <Link to = {`/user-album/${album.id}`}>
+            <button className="album-button">Click on Album:{album.title}</button> 
         </Link>
      </div>
    )
@@ -64,7 +63,6 @@ renderUserAlbums = (album, index) => {
 render(){
    const {users} = this.state;
    const {albums} = this.state;
-   console.log(albums)
    return(
      <div>
         <div>
